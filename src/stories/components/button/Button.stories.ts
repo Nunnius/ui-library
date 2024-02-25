@@ -56,3 +56,11 @@ export const Warning: Story = {
     backgroundColor: "red",
   },
 };
+
+export const Info: Story = {
+  args: {
+    primary: true,
+    label: "Information",
+    backgroundColor: "blue",
+  },
+};
