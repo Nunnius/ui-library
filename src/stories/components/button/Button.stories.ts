@@ -64,3 +64,11 @@ export const Info: Story = {
     backgroundColor: "blue",
   },
 };
+
+export const Success: Story = {
+  args: {
+    primary: true,
+    label: "Success",
+    backgroundColor: "rgb(63, 185, 80)",
+  },
+};
