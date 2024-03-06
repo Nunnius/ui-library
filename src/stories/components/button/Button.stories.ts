@@ -1,7 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
 import { Button } from "./Button";
+import { Add, Cookie, Done, WaterDrop } from "@mui/icons-material";
 
+const icons = { Add, Cookie, Done, WaterDrop };
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
   title: "Example/Button",
@@ -14,7 +16,19 @@ const meta = {
   tags: ["autodocs"],
   // More on argTypes: https://storybook.js.org/docs/api/argtypes
   argTypes: {
-    backgroundColor: { control: "color" },
+    icon: {
+      options: Object.keys(icons),
+      mapping: icons,
+      control: {
+        type: 'select',
+        labels: {
+          Add: 'Add',
+          Cookie: 'Cookie',
+          Done: 'Done',
+          WaterDrop: 'WaterDrop',
+        },
+      },
+    },
   },
 } satisfies Meta<typeof Button>;
 
@@ -24,51 +38,29 @@ type Story = StoryObj<typeof meta>;
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Primary: Story = {
   args: {
-    primary: true,
-    label: "Button",
+    type: 'primary',
+    label: "Label",
   },
 };
 
 export const Secondary: Story = {
   args: {
-    label: "Button",
+    type: 'secondary',
+    label: "Label",
   },
 };
 
-export const Large: Story = {
+export const Tertiary: Story = {
   args: {
-    size: "large",
-    label: "Button",
+    type: 'tertiary',
+    label: "Label",
   },
 };
 
-export const Small: Story = {
+export const PrimaryWithIcon: Story = {
   args: {
-    size: "small",
-    label: "Button",
-  },
-};
-
-export const Warning: Story = {
-  args: {
-    primary: true,
-    label: "Delete now",
-    backgroundColor: "red",
-  },
-};
-
-export const Info: Story = {
-  args: {
-    primary: true,
-    label: "Information",
-    backgroundColor: "blue",
-  },
-};
-
-export const Success: Story = {
-  args: {
-    primary: true,
-    label: "Success",
-    backgroundColor: "rgb(63, 185, 80)",
+    type: 'primary',
+    label: "Label",
+    icon: WaterDrop,
   },
 };

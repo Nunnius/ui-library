@@ -1,15 +1,13 @@
-import React from 'react';
-import './button.css';
+import React, { ReactNode } from 'react';
+import styles from './styles.module.css';
+import { SvgIconComponent, WaterDrop } from '@mui/icons-material';
+import { SvgIcon } from '@mui/material';
 
 interface ButtonProps {
   /**
    * Is this the principal call to action on the page?
    */
-  primary?: boolean;
-  /**
-   * What background color to use
-   */
-  backgroundColor?: string;
+  type?: 'primary' | 'secondary' | 'tertiary';
   /**
    * How large should the button be?
    */
@@ -18,6 +16,10 @@ interface ButtonProps {
    * Button contents
    */
   label: string;
+  /**
+   * Icon
+   */
+  icon?: SvgIconComponent;
   /**
    * Optional click handler
    */
@@ -28,25 +30,38 @@ interface ButtonProps {
  * Primary UI component for user interaction
  */
 export const Button = ({
-  primary = false,
+  type = 'primary',
   size = 'medium',
-  backgroundColor,
   label,
+  icon,
   ...props
 }: ButtonProps) => {
-  const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
+  const getTypeClassName = {
+    'primary': styles['tk-button--primary'],
+    'secondary': styles['tk-button--secondary'],
+    'tertiary': styles['tk-button--tertiary'],
+  };
+
+  const getIconSize = {
+    'small': 16,
+    'medium': 20,
+    'large': 20,
+  }
+
   return (
     <button
       type="button"
-      className={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
+      className={[styles['tk-button'], styles[`tk-button--${size}`], getTypeClassName[type]].join(' ')}
       {...props}
     >
-      {label}
-      <style jsx>{`
-        button {
-          background-color: ${backgroundColor};
-        }
-      `}</style>
+      {icon && (
+        <SvgIcon
+          component={icon}
+          sx={{fontSize: getIconSize[size]}}
+          inheritViewBox
+        />
+      )}
+      <span className={styles['tk-button__label']}>{label}</span>
     </button>
   );
 };
