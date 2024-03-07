@@ -83,3 +83,12 @@
 .tk-button--large {
   height: 40px;
 }
+
+.tk-button--has-icon {
+  padding-inline: 8px 12px;
+}
+
+.tk-button--only-icon {
+  aspect-ratio: 1/1;
+  padding: 0;
+} 

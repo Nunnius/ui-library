@@ -64,3 +64,10 @@ export const PrimaryWithIcon: Story = {
     icon: WaterDrop,
   },
 };
+
+export const PrimaryOnlyIcon: Story = {
+  args: {
+    type: 'primary',
+    icon: WaterDrop,
+  },
+};

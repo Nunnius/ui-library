@@ -15,7 +15,7 @@ interface ButtonProps {
   /**
    * Button contents
    */
-  label: string;
+  label?: string;
   /**
    * Icon
    */
@@ -51,7 +51,13 @@ export const Button = ({
   return (
     <button
       type="button"
-      className={[styles['tk-button'], styles[`tk-button--${size}`], getTypeClassName[type]].join(' ')}
+      className={[
+        styles['tk-button'],
+        styles[`tk-button--${size}`],
+        getTypeClassName[type],
+        (icon && label) && styles['tk-button--has-icon'],
+        (icon && !label) && styles['tk-button--only-icon'],
+      ].join(' ')}
       {...props}
     >
       {icon && (
@@ -61,7 +67,9 @@ export const Button = ({
           inheritViewBox
         />
       )}
-      <span className={styles['tk-button__label']}>{label}</span>
+      {label && (
+        <span className={styles['tk-button__label']}>{label}</span>
+      )}
     </button>
   );
 };
