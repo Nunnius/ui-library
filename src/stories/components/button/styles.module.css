@@ -1,0 +1,94 @@
+.tk-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-inline: 12px;
+  cursor: pointer;
+  column-gap: 4px;
+  outline: 0;
+  color: var(--clr-black);
+  font-size: 1rem;
+  border-radius: 2px;
+  transition:
+    color .2s ease-in-out,
+    border-color .2s ease-in-out,
+    background-color .2s ease-in-out;
+}
+
+.tk-button__label {
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.tk-button--primary {
+  background-color: var(--clr-primary);
+  border: 1px solid var(--clr-transparent);
+  color: var(--clr-white);
+}
+
+.tk-button--primary:hover {
+  background-color: var(--clr-c002);
+  border-color: var(--clr-c002);
+}
+
+.tk-button--primary:active {
+  background-color: var(--clr-c001);
+  border-color: var(--clr-c001);
+}
+
+.tk-button--secondary {
+  background-color: var(--clr-white);
+  border: 1px solid var(--clr-grey90);
+}
+
+.tk-button--secondary:hover {
+  background-color: var(--clr-grey95);
+}
+
+.tk-button--secondary:active {
+  background-color: var(--clr-grey90);
+}
+
+.tk-button--tertiary {
+  background-color: var(--clr-white);
+  border: 1px solid var(--clr-transparent);
+}
+
+.tk-button--tertiary:hover {
+  border-color: var(--clr-grey90);
+}
+
+.tk-button--tertiary:active {
+  background-color: var(--clr-grey90);
+  border-color: var(--clr-grey90);
+}
+
+.tk-button--primary:disabled,
+.tk-button--secondary:disabled,
+.tk-button--tertiary:disabled {
+  background-color: var(--clr-grey90);
+  border-color: var(--clr-grey85);
+  color: var(--clr-grey60);
+}
+
+.tk-button--small {
+  height: 28px;
+  font-size: .875rem;
+}
+
+.tk-button--medium {
+  height: 36px;
+}
+
+.tk-button--large {
+  height: 40px;
+}
+
+.tk-button--has-icon {
+  padding-inline: 8px 12px;
+}
+
+.tk-button--only-icon {
+  aspect-ratio: 1/1;
+  padding: 0;
+} 

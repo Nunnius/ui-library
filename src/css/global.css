@@ -1,0 +1,41 @@
+:root {
+  --clr-primary: #ba4f79;
+  --clr-secondary: #526abf;
+  --clr-transparent: transparent;
+  --clr-black: #0f1426;
+  --clr-grey30: #3f424d;
+  --clr-grey50: #6f7380;
+  --clr-grey60: #aaacb2;
+  --clr-grey70: #aaacb2;
+  --clr-grey85: #d3d5da;
+  --clr-grey90: #e1e2e5;
+  --clr-grey95: #f2f2f2;
+  --clr-white: #ffffff;
+  --clr-black-rgb: 15,20,38;
+  --clr-white-rgb: 255,255,255;
+  --clr-c001: #6e2e47;
+  --clr-c002: #873958;
+  --clr-c003: #f2b6cd;
+  --clr-c004: #fff0f6;
+  --clr-c005: #26366e;
+  --clr-c006: #3c54ac;
+  --clr-c007: #cdd5f5;
+  --clr-c008: #f5f8ff;
+  --clr-success: #127f58;
+  --clr-error: #c12121;
+  --clr-warning: #ffc32b;
+  --clr-information: #3c54ac;
+  --clr-g001: linear-gradient(to top right,#f2b6cd,#ffffff);
+  --clr-g002: linear-gradient(to top right,#0f1426,#3f424d);
+  --clr-g003: linear-gradient(to top right,#3f424d,#6f7380);
+  --clr-g004: linear-gradient(to top right,#e1e2e5,#ffffff);
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  font-size: 1rem;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
